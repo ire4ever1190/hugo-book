@@ -228,6 +228,14 @@ aside nav,
   }
 }
 
+// Falllback to system fonts until fonts are downloaded
+@font-face {
+  font-family: "Oxygen";
+  src: url("https://fonts.googleapis.com/css?family=Oxygen|Oxygen+Mono:300,400,700");
+  font-display: swap;
+}
+
+
 // Extra space for big screens
 @media screen and (min-width: $container-max-width) {
   .book-page,
