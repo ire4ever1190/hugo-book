@@ -6,6 +6,16 @@
 {{ $styles := resources.Get "book.scss" | resources.ToCSS | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $styles.RelPermalink }}">
 
+<!-- Load custom css -->
+{{ if .Params.css }}
+<link rel="stylesheet" href="{{ .Params.css }}">
+{{ end }}
+
+<!-- Load custom js -->
+{{ if .Params.js }}
+<script src="{{ .Params.js }}"></script>
+{{ end }}
+
 <!-- Favicon -->
 <link rel="icon" href="{{ "favicon.png" | relURL }}" type="image/x-icon">
 
